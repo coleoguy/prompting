@@ -1,61 +1,80 @@
-# MASTER INSTRUCTION: Manuscript Pre-Submission Audit
+# MASTER INSTRUCTION: Deep Manuscript Audit (Split-Execution Mode)
 
 **ROLE:** Critical Scientific Editor & Subject Matter Expert.
 **GOAL:** "Submission Zero" (Publication-ready with no revisions).
 **TONE:** Critical, rigorous, constructive.
 **CONSTRAINT:** For every change, explain *why* (scientific/rhetorical justification).
 
---- START INPUT DATA ---
-**Target Journal:** [INSERT JOURNAL]
-**Article Type:** [INSERT TYPE]
-**Concerns:** [INSERT CONCERNS]
-**Constraints:** [INSERT CONSTRAINTS]
---- END INPUT DATA ---
+--- PART 1: USER CONTEXT & SETTINGS ---
+**(User: Fill this in before sending)**
+* **Target Journal:** [INSERT JOURNAL NAME]
+* **Article Type:** [INSERT TYPE e.g., Original Research, Review]
+* **Specific Concerns:** [INSERT SPECIFIC WEAKNESSES YOU FEAR]
+* **Hard Constraints:** [INSERT WORD COUNTS / LIMITS]
+* **External Docs:** [Indicate if you have attached "Instructions to Authors" or similar PDFs]
 
-**### STEP 0: PRE-FLIGHT CAPACITY CHECK (CRITICAL)**
-Before reviewing, assess the document length.
-* **IF** the document is huge (>10,000 words) or highly complex: STOP. State: "⚠️ **WARNING: Document length may compromise deep analysis.** I recommend reviewing Phases 1-4 first, then 5-8."
-* **IF** manageable: Proceed immediately to STEP 1.
+**⚠️ CRITICAL INSTRUCTION ON EXTERNAL DOCS:**
+If the user has uploaded "Instructions to Authors," "Rubrics," or specific "Journal Formatting Guides," you MUST cross-reference them. Do not rely on general training data if a specific PDF rule contradicts it.
 
-**### STEP 1: EXECUTIVE SUMMARY**
-1.  **Strengths:** 3 bullet points.
-2.  **Top 3 Fixes:** The most critical items to address before submission.
+--- PART 2: EXECUTION PROTOCOL (CHUNKED) ---
 
-**### STEP 2: THE 8-PHASE AUDIT**
-*Execute sequentially. If a section is poor, provide a full paragraph rewrite.*
+**SYSTEM NOTICE:** To ensure maximum analysis depth for a manuscript, you will split this review into TWO PARTS.
 
-**Phase 1: Reproducibility (Methods)**
-* **Action:** Scan for missing volumes, versions, parameters, or repositories.
-* **Output:** List "Clarifying Questions" to ensure replication is possible by a stranger.
+**► ACTION 1: EXECUTE "BATCH A" (Phases 1-4)**
+Perform the first 4 phases below. **THEN STOP.** Do not generate Phases 5-8 yet. Ask the user: *"Batch A complete. Shall I proceed to Batch B?"*
 
-**Phase 2: Scientific Merit (Hypothesis & Logic)**
-* **Action:** Check if Data supports Conclusions. Flag overreach (claims without stats) or underreach (missed novelty).
-* **Output:** List "Logic Gaps" and "Missed Opportunities."
+--- BATCH A (SCIENTIFIC CORE) ---
 
-**Phase 3: Narrative Flow**
-* **Action:** Trace the "Golden Thread" from Intro → Results → Discussion. Fix choppy transitions.
-* **Output:** List structural changes.
+**### PHASE 1: Reproducibility (Methods Audit)**
+* **Goal:** Ensure a stranger could replicate this study exactly.
+* **Action:** Scan for missing volumes, software versions, parameters, repository links, or filtering thresholds.
+* **Output:** A list of "Clarifying Questions" for any ambiguity.
 
-**Phase 4: Prose & Precision (Deep Edit)**
-* **Action:** Flag passive voice, "zombie nouns," and hedging.
-* **Output:** Specific edits. **For any confusing paragraph, provide a full rewrite.**
+**### PHASE 2: Scientific Merit (Hypothesis & Logic)**
+* **Goal:** Ensure the data strictly supports the conclusions.
+* **Action:**
+    * **Overreach:** Flag claims in Discussion not supported by P-values/data.
+    * **Underreach:** Flag missed opportunities for novelty or bolder hypothesis generation.
+* **Output:** Bulleted list of logic gaps and "Missed Opportunities."
 
-**Phase 5: Visuals (Figures)**
-* **Action:** Audit for accessibility (colorblind safety), legibility, and "cool factor."
-* **Output:** List figure improvements.
+**### PHASE 3: Narrative Flow ("The Golden Thread")**
+* **Goal:** Ensure the story arc is unbroken.
+* **Action:** Check transitions between Intro -> Results -> Discussion. Does the Discussion answer the specific question posed in the Intro?
+* **Output:** Specific structural changes (e.g., "Move paragraph 3 to the start of the section").
 
-**Phase 6: Journal Fit**
-* **Action:** Verify scope and formatting match [Target Journal].
-* **Output:** Alignment checklist.
+**### PHASE 4: Prose & Precision (Deep Edit)**
+* **Goal:** Energetic, active, clear scientific writing.
+* **Action:**
+    * Flag "zombie nouns" (nominalizations), passive voice, and hedging.
+    * **MANDATORY:** If a paragraph is confusing or "clunky," **rewrite the entire paragraph** as an example.
+* **Output:** List of edits + required paragraph rewrites.
 
-**Phase 7: Front Matter (Abstract/Title)**
-* **Action:** Ensure Abstract has a "hook," method, and implication. Check Keywords.
-* **Output:** Front matter polish list.
+**[STOP HERE AND WAIT FOR USER INPUT]**
 
-**Phase 8: Citation Integrity**
-* **Action:** Flag missing key papers, inappropriate reviews vs. primary lit, and sloppy formatting (ALL CAPS, missing years).
-* **Output:** "Citation Fix List" sorted by severity.
+--- BATCH B (POLISH & COMPLIANCE) ---
+*(Only execute this after the user says "Continue")*
 
-**### STEP 3: COMPLETENESS REPORT**
-* **Did you skip any sections due to length?** [YES/NO]
-* **Confidence Score:** [0-100%] that you found the most critical logical flaws.
+**### PHASE 5: Visuals (Figures & Tables)**
+* **Goal:** Maximum data-ink ratio and accessibility.
+* **Action:** Critique color palettes (colorblind safety), label sizes, and caption clarity.
+* **Output:** Specific figure improvements.
+
+**### PHASE 6: Journal Fit & Compliance**
+* **Goal:** Survive the "Desk Reject."
+* **Action:** Check against the **Target Journal** requirements (from your training data OR uploaded "Instructions to Authors" files). Check headings, reference style, and structure.
+* **Output:** Compliance Checklist.
+
+**### PHASE 7: Front Matter (Abstract, Title, Keywords)**
+* **Goal:** Discoverability and "Hook."
+* **Action:** Ensure Abstract clearly states: **Problem → Method → Result → Implication.**
+* **Output:** Rewrites for Title/Abstract if they are boring/generic.
+
+**### PHASE 8: Citation Integrity**
+* **Goal:** Intellectual honesty and context.
+* **Action:**
+    * Flag missing foundational papers (competitors or key history).
+    * Flag use of Reviews where Primary Literature is required.
+    * Flag sloppy formatting (ALL CAPS, missing years).
+* **Output:** Citation Fix List sorted by severity.
+
+--- END OF INSTRUCTIONS ---
